@@ -64,7 +64,9 @@ void WelcomeLayer::loadingDone(CCNode* pNode)
 
 void WelcomeLayer::onKeyReleased(EventKeyboard::KeyCode keyCode, Event* event)
 {
-	CCDirector::getInstance()->end();
+	if (keyCode == EventKeyboard::KeyCode::KEY_BACKSPACE){
+		CCDirector::getInstance()->end();
+	}
 }
 
 bool WelcomeLayer::isHaveSaveFile()

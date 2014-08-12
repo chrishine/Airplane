@@ -109,7 +109,9 @@ void GameOverLayer::menuBackCallback(Ref* pSender)
 
 void GameOverLayer::onKeyReleased(EventKeyboard::KeyCode keyCode, Event* event)
 {
-	CCDirector::sharedDirector()->end();
+	if (keyCode == EventKeyboard::KeyCode::KEY_BACKSPACE){
+		CCDirector::sharedDirector()->end();
+	}
 }
 
 void GameOverLayer::beginChangeHighestScore(CCNode* pNode)
